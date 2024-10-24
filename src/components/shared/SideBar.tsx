@@ -5,11 +5,7 @@ import {
   House,
   Image,
   Cat,
-  Blend,
-  FlipVertical2,
-  Focus,
-  ScanText,
-  Terminal,
+  Focus
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
@@ -96,7 +92,7 @@ const SideBar = () => {
                       </div> */}
                       <div
                         className="flex items-center gap-2 hover:bg-accent transition-all duration-500 p-2 rounded-xl cursor-pointer"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/training-requests")}
                       >
                         <Focus className="h-6 w-6 text-primary-black" />
                         <p className="text-sm text-primary-black font-medium">
@@ -105,7 +101,7 @@ const SideBar = () => {
                       </div>
                       <div
                         className="flex items-center gap-2 hover:bg-accent transition-all duration-500 p-2 rounded-xl cursor-pointer"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/training-requests")}
                       >
                         <Cat className="h-6 w-6 text-primary-black" />
                         <p className="text-sm text-primary-black font-medium">
@@ -116,7 +112,7 @@ const SideBar = () => {
                   </div>
 
                   {/* tools 2 */}
-                  <div className="mx-auto flex flex-col w-[90%] bg-white p-4 rounded-xl">
+                  {/* <div className="mx-auto flex flex-col w-[90%] bg-white p-4 rounded-xl">
                     <p className="font-semibold text-base text-primary-black">
                       Users
                     </p>
@@ -159,7 +155,7 @@ const SideBar = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -243,39 +239,27 @@ const SideBar = () => {
                           >
                             <Image className="h-6 w-6 text-primary-black" />
                             <p className="text-sm text-primary-black font-medium">
-                              Training Requests
+                              Training Generations
                             </p>
                           </div>
                           <div
                             className="flex items-center gap-2 hover:bg-accent transition-all duration-500 p-2 rounded-xl cursor-pointer"
                             onClick={() => {
                               setMobileOpen(false);
-                              navigate("/");
+                              navigate("/training-requests");
                             }}
                           >
                             <Focus className="h-6 w-6 text-primary-black" />
 
                             <p className="text-sm text-primary-black font-medium">
-                              AI Photoshoot
-                            </p>
-                          </div>
-                          <div
-                            className="flex items-center gap-2 hover:bg-accent transition-all duration-500 p-2 rounded-xl cursor-pointer"
-                            onClick={() => {
-                              setMobileOpen(false);
-                              navigate("/");
-                            }}
-                          >
-                            <Cat className="h-6 w-6 text-primary-black" />
-                            <p className="text-sm text-primary-black font-medium">
-                              Flux-dev Realism
+                              Training Queues
                             </p>
                           </div>
                         </div>
                       </div>
 
                       {/* tools 2 */}
-                      <div className="mx-auto flex flex-col w-[90%] bg-white p-4 rounded-xl">
+                      {/* <div className="mx-auto flex flex-col w-[90%] bg-white p-4 rounded-xl">
                         <p className="font-semibold text-base text-primary-black">
                           Magic Tools
                         </p>
@@ -327,7 +311,7 @@ const SideBar = () => {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

@@ -5,13 +5,19 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 import { QueryProvider } from "./lib/tanstack-query/QueryProvider.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
+import { AppProvider } from "./context/AppContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <QueryProvider>
-      <StrictMode>
-        <App />
-      </StrictMode>
-    </QueryProvider>
+    <StrictMode>
+      <QueryProvider>
+        <AuthProvider>
+          <AppProvider>
+            <App />
+          </AppProvider>
+        </AuthProvider>
+      </QueryProvider>
+    </StrictMode>
   </BrowserRouter>
 );

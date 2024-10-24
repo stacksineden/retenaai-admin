@@ -7,7 +7,7 @@ import {
   Form,
   FormControl,
   FormField,
-  FormItem, 
+  FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
@@ -39,11 +39,16 @@ const SignInForm = () => {
       password: "",
     },
   });
-
+  const userEmails = ["sarmuelypmd@gmail.com"];
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SigninValidationSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
+
+    if (!userEmails.includes(values.email)) {
+      toast.error("You are not authorised to use this platform");
+      return;
+    }
 
     const session = await signInAccount({
       email: values.email,
@@ -52,6 +57,7 @@ const SignInForm = () => {
     // if (session) {
     //   return toast.success("Login Successful.");
     // }
+    console.log(session);
     if (session instanceof Error) {
       // Assuming err.message contains the API error message
       if (
@@ -61,7 +67,7 @@ const SignInForm = () => {
         navigate("/dashboard");
       }
       return toast.error(
-        session?.message || "Sign in failed, please try again."
+        session?.message || "Sign in failed, please try again." 
       );
     }
     setIsCheckingAuth(true);
@@ -86,7 +92,9 @@ const SignInForm = () => {
             className="w-full object-contain"
           />
         </Link>
-        <div className="bg-accent shadow-md text-primary-blue text-base font-bold my-4 p-4 rounded-xl">ADMIN CONTROL CENTER</div>
+        <div className="bg-accent shadow-md text-primary-blue text-base font-bold my-4 p-4 rounded-xl">
+          ADMIN CONTROL CENTER
+        </div>
         <h2 className="h3-bold md:h2-bold pt-5 text-primary-black">
           Log in to your account
         </h2>
