@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { Routes, Route } from "react-router-dom";
 import SignInForm from "./_auth/forms/SignInForm";
-import { Dashboard, TrainingRequests } from "./_root/pages";
+import { TrainingRequests } from "./_root/pages";
 import { Toaster } from "react-hot-toast";
 
 const AuthLayout = lazy(() => import("./_auth/AuthLayout"));
