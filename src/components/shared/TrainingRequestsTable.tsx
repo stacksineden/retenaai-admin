@@ -116,7 +116,12 @@ const TrainingRequestsTable = () => {
                     </div>
                   </TableCell>
                   <TableCell className="text-center">{data?.txRef}</TableCell>
-                  <TableCell className="text-center">{data?.prompt}</TableCell>
+                  <TableCell
+                    className="text-center truncate"
+                    onClick={() => handleCopyPrompt(data?.prompt || "")}
+                  >
+                    {truncateText(data?.prompt, 40)}
+                  </TableCell>
                   <TableCell
                     className={`text-center font-bold uppercase text-sm`}
                     style={{
